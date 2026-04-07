@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   n8n:
     image: n8nio/n8n
@@ -7,6 +6,7 @@ services:
       - "5678:5678"
     environment:
       - GENERIC_TIMEZONE=UTC
+      - N8N_SECURE_COOKIE=false  # only true if using HTTPS directly
     volumes:
       - n8n_data:/home/node/.n8n
     networks:
